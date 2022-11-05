@@ -5,14 +5,14 @@ DateTime getCurrentDateAndTime() {
   return DateTime.now();
 }
 
-/// @func timestampParser() parses timestamp to a String
+/// {@func timestampParser()} parses timestamp to a String
 String timestampDateParser(Timestamp timestamp) {
   DateTime dt = timestamp.toDate();
   String formattedDate = getFormattedDate(dt.toString());
   return formattedDate;
 }
 
-/// @func getFormattedDate() parses the date in the given format and then returns it as a String
+/// {@func getFormattedDate()} parses the date in the given format and then returns it as a String
 String getFormattedDate(String date) {
   /// Convert into local date format.
   var localDate = DateTime.parse(date).toLocal();
@@ -38,18 +38,3 @@ String timestampTimeParser(Timestamp timestamp) {
   String formattedTime = DateFormat('hh:mm:ss a').format(dt);
   return formattedTime;
 }
-
-// String getFormattedTime(String time) {
-//   /// Convert into local date format.
-//   var localTime = DateTime.parse(time).toLocal();
-
-//   var inputFormat = DateFormat('yyyy-MM-dd HH:mm');
-//   var inputTime = inputFormat.parse(localTime.toString());
-
-//   /// outputFormat - convert into format you want to show.
-//   var outputFormat = DateFormat('HH:mm');
-//   // var outputFormat = DateFormat('dd/mm/yyyy HH:mm');
-//   var outputTime = outputFormat.format(inputTime);
-
-//   return outputTime.toString();
-// }

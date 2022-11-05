@@ -52,19 +52,6 @@ class _UploadImageState extends State<UploadImage> {
     );
   }
 
-  // getPathAndUpload() async {
-  //   Directory appDocDir = await getApplicationDocumentsDirectory();
-  //   String filePath = '${appDocDir.absolute}/${storageRef.name}';
-  //   String fileName = "Random File";
-  //   File file = File(filePath);
-
-  //   try {
-  //     uploadFile(file, fileName);
-  //   } on FirebaseException catch (e) {
-  //     e.toString();
-  //   }
-  // }
-
   Future<String> getDownloadUrl({required Reference reference}) async {
     return await reference.getDownloadURL();
   }

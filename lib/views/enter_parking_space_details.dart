@@ -7,7 +7,7 @@ import 'package:vehicle_parking_management/models/parking_details.dart';
 import 'package:vehicle_parking_management/utils/colors.dart';
 import 'package:vehicle_parking_management/utils/snack_bar.dart';
 import '../home.dart';
-import '../utils/utility.dart';
+import '../utils/numeric.dart';
 
 class EnterParkingSpaceDetails extends StatefulWidget {
   const EnterParkingSpaceDetails({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class EnterParkingSpaceDetails extends StatefulWidget {
 
 class _EnterParkingSpaceDetailsState extends State<EnterParkingSpaceDetails> {
   /// {@controller}
-  final formController = Get.find<ParkingController>();
+  final parkingController = Get.find<ParkingController>();
 
   /// {@key}
   final _formKey = GlobalKey<FormState>();
@@ -52,7 +52,7 @@ class _EnterParkingSpaceDetailsState extends State<EnterParkingSpaceDetails> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10)),
                     errorStyle: const TextStyle(color: Colors.redAccent)),
-                controller: formController.totalParkingSlotsController,
+                controller: parkingController.totalParkingSlotsController,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "Please enter correct value";
@@ -64,7 +64,7 @@ class _EnterParkingSpaceDetailsState extends State<EnterParkingSpaceDetails> {
                 },
                 onChanged: ((value) {
                   parkingDetails.totalParkingSlots = int.parse(
-                      formController.totalParkingSlotsController.text);
+                      parkingController.totalParkingSlotsController.text);
                 }),
               ),
               const SizedBox(
@@ -76,7 +76,8 @@ class _EnterParkingSpaceDetailsState extends State<EnterParkingSpaceDetails> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10)),
                     errorStyle: const TextStyle(color: Colors.redAccent)),
-                controller: formController.numberOfFourWheelerSlotsController,
+                controller:
+                    parkingController.numberOfFourWheelerSlotsController,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "Please enter correct value";
@@ -84,15 +85,17 @@ class _EnterParkingSpaceDetailsState extends State<EnterParkingSpaceDetails> {
                   if (!isNumeric(value)) {
                     return "Please enter a number";
                   }
-                  if (formController.numberOfFourWheelerSlotsControllerText >
-                      formController.totalParkingSlotsControllerText.toInt()) {
+                  if (parkingController.numberOfFourWheelerSlotsControllerText >
+                      parkingController.totalParkingSlotsControllerText
+                          .toInt()) {
                     return "Invalid, more than total slots";
                   }
                   return null;
                 },
                 onChanged: (value) {
                   parkingDetails.numberOfFourWheelerSlots = int.parse(
-                      formController.numberOfFourWheelerSlotsController.text);
+                      parkingController
+                          .numberOfFourWheelerSlotsController.text);
                 },
               ),
               const SizedBox(
@@ -104,7 +107,7 @@ class _EnterParkingSpaceDetailsState extends State<EnterParkingSpaceDetails> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10)),
                     errorStyle: const TextStyle(color: Colors.redAccent)),
-                controller: formController.numberOfTwoWheelerSlotsController,
+                controller: parkingController.numberOfTwoWheelerSlotsController,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "Please enter correct value";
@@ -112,15 +115,16 @@ class _EnterParkingSpaceDetailsState extends State<EnterParkingSpaceDetails> {
                   if (!isNumeric(value)) {
                     return "Please enter a number";
                   }
-                  if (formController.numberOfTwoWheelerSlotsControllerText >
-                      formController.totalParkingSlotsControllerText.toInt()) {
+                  if (parkingController.numberOfTwoWheelerSlotsControllerText >
+                      parkingController.totalParkingSlotsControllerText
+                          .toInt()) {
                     return "Invalid, more than total slots";
                   }
                   return null;
                 },
                 onChanged: ((value) {
                   parkingDetails.numberOfTwoWheelerSlots = int.parse(
-                      formController.numberOfTwoWheelerSlotsController.text);
+                      parkingController.numberOfTwoWheelerSlotsController.text);
                 }),
               ),
               const SizedBox(
@@ -132,7 +136,7 @@ class _EnterParkingSpaceDetailsState extends State<EnterParkingSpaceDetails> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10)),
                     errorStyle: const TextStyle(color: Colors.redAccent)),
-                controller: formController.parkingLocationController,
+                controller: parkingController.parkingLocationController,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "Please enter correct value";
@@ -141,7 +145,7 @@ class _EnterParkingSpaceDetailsState extends State<EnterParkingSpaceDetails> {
                 },
                 onChanged: (value) {
                   parkingDetails.parkingLocation =
-                      formController.parkingLocationController.text;
+                      parkingController.parkingLocationController.text;
                 },
               ),
               const SizedBox(
@@ -154,7 +158,7 @@ class _EnterParkingSpaceDetailsState extends State<EnterParkingSpaceDetails> {
                       borderRadius: BorderRadius.circular(10)),
                   errorStyle: const TextStyle(color: Colors.redAccent),
                 ),
-                controller: formController.perHourChargesController,
+                controller: parkingController.perHourChargesController,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "Please enter correct value";
@@ -166,7 +170,7 @@ class _EnterParkingSpaceDetailsState extends State<EnterParkingSpaceDetails> {
                 },
                 onChanged: ((value) {
                   parkingDetails.perHourCharges =
-                      formController.perHourChargesController.text as double;
+                      parkingController.perHourChargesController.text as double;
                 }),
               ),
               const Spacer(),
