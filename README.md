@@ -21,15 +21,19 @@ All the details of the vehicle added are stored in a NoSQL database.
 * [FlutterToast](https://pub.dev/packages/fluttertoast) : To display toast messages
 * [FontAwesomeFlutter](https://pub.dev/packages/font_awesome_flutter) : For fonts and icons
 * [intl](https://pub.dev/packages/intl) : For date and time related operations
-* [liquid_progress_indicator](https://pub.dev/packages/liquid_progress_indicator): To display upload percentage
 
 ### Abbreviations used:
 
  @func = function
+ 
  @param = parameter
+ 
  @controller = controller
+ 
  @obj = object
+ 
  @key = key
+ 
  @var = variable
 
  ### Usage:
