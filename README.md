@@ -1,11 +1,11 @@
 # Vehicle Parking Management Application
 
-This is a vehicle management application which keeps track of the number of vehicles in the parking lot.
+This is a vehicle management application that keeps track of the number of vehicles in the parking lot.
 
 It allows the following functionality:
 
 * Add and remove vehicles
-* View history of the vehicles added
+* View the history of the vehicles added
 
 All the details of the vehicle added are stored in a NoSQL database.
 
