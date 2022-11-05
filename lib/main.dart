@@ -4,13 +4,11 @@ import 'package:vehicle_parking_management/home.dart';
 import 'package:vehicle_parking_management/views/enter_parking_space_details.dart';
 import 'package:vehicle_parking_management/views/generate_receipt.dart';
 import 'package:vehicle_parking_management/views/history.dart';
-
-// list of all available cameras
-//late List<CameraDescription> _cameras;
+import 'package:vehicle_parking_management/views/new_vehicle.dart';
+import 'package:vehicle_parking_management/views/parking_data.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  //_cameras = await availableCameras();
   runApp(MyApp());
 }
 
@@ -42,7 +40,8 @@ class MyApp extends StatelessWidget {
                   const EnterParkingSpaceDetails(),
               "/generate_receipt": (context) => const Receipt(),
               "/history": (context) => const HistoryScreen(),
-              "/receipt": (context) => const Receipt(),
+              "/new_vehicle": (context) => const NewVehicle(),
+              "/parking_data": (context) => ParkingData(),
             },
             home: const Home(),
           );
