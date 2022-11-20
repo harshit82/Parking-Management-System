@@ -69,3 +69,9 @@ flutter run --no-sound-null-safety
 
 
 ![image](https://user-images.githubusercontent.com/93983185/200156420-38555376-417d-414d-8967-123b2f4831fc.png)
+
+
+## Future Upgrades:
+
+* UI Improvement and Animations integrations
+* Payment Service Intergration preferably via UPI
